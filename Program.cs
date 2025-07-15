@@ -14,8 +14,13 @@ namespace localization
             builder.Services.AddControllersWithViews();
             #region "Language"
             //========== localization
+            //????? ???? localization
             builder.Services.AddLocalization(option=> option.ResourcesPath="Resources");
             builder.Services.Configure<RequestLocalizationOptions>(option => {
+                //
+                // ?? ???? configration 
+                //??????? ???? ?? en and ar
+
                 var supportedCulter = new[] {
                     new CultureInfo("en"),
                     new CultureInfo("ar")
@@ -41,6 +46,7 @@ namespace localization
             app.UseStaticFiles();
             #region "Mw_language"
             // =========== localization
+            //create varable and inj to localization
             var localizationOption = app.Services.GetService<IOptions<RequestLocalizationOptions>>();
             app.UseRequestLocalization(localizationOption!.Value);
             // ===========

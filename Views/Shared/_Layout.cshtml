@@ -34,12 +34,12 @@ dir="@(System.Threading.Thread.CurrentThread.CurrentUICulture.TextInfo.IsRightTo
                     </ul>
                 </div>
                 <div>
-                    @* ChangeLanguage ,- asp-route-culter,- relturnurl *@
+                    @* ChangeLanguage ,- asp-route-cultuer,- relturnurl *@
                     <a class="text-dark" asp-action="ChangeLanguage" asp-controller="Home"
-                     asp-route-culter="en"
+                       asp-route-cultuer="en"
                        asp-route-returnurl="@Context.Request.Path">English</a>
                     <a class="text-dark" asp-action="ChangeLanguage" asp-controller="Home"
-                       asp-route-culter="ar"
+                       asp-route-cultuer="ar"
                        asp-route-returnurl="@Context.Request.Path">عربي</a>
                 </div>
             </div>

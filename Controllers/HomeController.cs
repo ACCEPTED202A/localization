@@ -29,12 +29,17 @@ namespace localization.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-        public IActionResult ChangeLanguage(string culter, string returnurl)
-        {
 
+
+        //we going to make method to change language have 2 parameeter 
+        public IActionResult ChangeLanguage(string cultuer, string returnurl)
+        {
+            //to use cookies
             Response.Cookies.Append(
+                //default language
                 CookieRequestCultureProvider.DefaultCookieName,
-                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culter)),
+                //declarate language now
+                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(cultuer)),
                 new CookieOptions //anonemus obj
                 {
                     //utcnow to access to user pc
